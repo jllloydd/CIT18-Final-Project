@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\tasks;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -27,7 +28,17 @@ class TaskController extends Controller
         return redirect()->route('dashboard')->with('status', 'New task created successfully');
     }
 
-    public function update()
+    public function get(){
+
+        $tasks = DB::table('tasks')
+        ->get();
+
+        return view('dashboard', compact('tasks'));
+    }
+
+    public function update(){
+
+    }
 
 
 }

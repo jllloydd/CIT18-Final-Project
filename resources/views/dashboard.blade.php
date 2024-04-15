@@ -19,28 +19,35 @@
                           <span class="font-medium">{{session('status')}}</span>
                         </div>
                       </div>
-                    @endif
+  @endif
+
     <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="bg-blue-900 text-white font-bold py-2 px-4 rounded-[10px] hover:bg-blue-300 my-5">
       Add new task
     </button>
 
     <div class="grid lg:grid-cols-4 grid-cols-1 gap-4 ">
 
+      @foreach($tasks as $task)
+
       <div class="bg-blue-900 text-white p-4 rounded-lg">
 
-          <h1 class="text-3xl mb-2 folt-extrabold">To-do Heading</h1>
-          <p class="py-4 mb-2 font-bold">To-Do Date and Time</p>
-          <p class="py-4 mb-2 font-bold">Description</p>
+        <h1 class="text-3xl mb-2 folt-extrabold">{{$task->task}}</h1>
+        <p class="py-4 mb-2 font-bold">{{$task->task_date}}, {{$task->task_time}}</p>
+        <p class="py-4 mb-2 font-bold">{{$task->desc}}</p>
 
-          <button type="button" class="bg-green-700 text-white font-bold py-2 px-4 rounded-[10px] hover:bg-green-300 my-5">
-            Edit
-          </button>
+        <button type="button" class="bg-green-700 text-white font-bold py-2 px-4 rounded-[10px] hover:bg-green-300 my-5">
+          Edit
+        </button>
 
-          <button type="button" class="bg-red-700 text-white font-bold py-2 px-4 rounded-[10px] hover:bg-red-300 my-5">
-            Delete
-          </button>
+        <button type="button" class="bg-red-700 text-white font-bold py-2 px-4 rounded-[10px] hover:bg-red-300 my-5">
+          Delete
+        </button>
 
       </div>
+
+      @endforeach
+
+
 
     </div>
 
