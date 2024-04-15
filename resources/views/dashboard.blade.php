@@ -16,6 +16,7 @@
     <div class="grid lg:grid-cols-4 grid-cols-1 gap-4 ">
 
       <div class="bg-blue-900 text-white p-4 rounded-lg">
+        
           <h1 class="text-3xl mb-2 folt-extrabold">To-do Heading</h1>
           <p class="py-4 mb-2 font-bold">To-Do Date and Time</p>
           <p class="py-4 mb-2 font-bold">Description</p>
