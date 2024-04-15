@@ -55,4 +55,13 @@ class TaskController extends Controller
         $tasks->delete();
         return redirect()->route('dashboard')->with('status', 'Task deleted');
     }
+
+    public function get(){
+
+        $tasks = DB::table('tasks')
+        ->get();
+
+        return view('dashboard', compact('tasks'));
+    }
+
 }
