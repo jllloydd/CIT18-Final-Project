@@ -35,11 +35,10 @@ class TaskController extends Controller
             'date' =>'required|date',
             'time' =>'required|string|max:255',
             'description' =>'required|string|max:999',
-
         ]);
         $tasks = tasks::find($id);
         $tasks->update($request->all());
-        return redirect()->route('dashboard')->with('status', 'Task updated successfully');
+        return redirect()->route('dashboard')->with('status', 'Task edited successfully');
     }
 
     public function delete(Request $request, $id)

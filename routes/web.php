@@ -17,5 +17,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/store', [TaskController::class, 'store']);
+Route::post('/update/(id}', [TaskController::class, 'update']);
 
 require __DIR__.'/auth.php';

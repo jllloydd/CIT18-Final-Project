@@ -132,7 +132,7 @@
             </div>
             <!-- Modal body -->
             <meta name="csrf-token" content="{{ csrf_token() }}">
-            <form class="p-4 md:p-5 form" action="" method="post">
+            <form class="p-4 md:p-5 form" action="{{ route('tasks.update', $task->id) }}" method="post">
                 @csrf
                 @method("POST")
                 <div class="grid gap-4 mb-4 grid-cols-2">
