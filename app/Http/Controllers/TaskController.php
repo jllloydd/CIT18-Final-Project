@@ -41,5 +41,17 @@ class TaskController extends Controller
         return redirect()->route('dashboard')->with('status', 'Task updated successfully');
     }
 
+    public function delete(Request $request, $id)
+    {
+        $request->validate([
+            'task' =>'required|string|max:255',
+            'date' =>'required|date',
+            'time' =>'required|string|max:255',
+            'description' =>'required|string|max:999',
 
+        ]);
+        $tasks = tasks::find($id);
+        $tasks->delete();
+        return redirect()->route('dashboard')->with('status', 'Task deleted');
+    }
 }
