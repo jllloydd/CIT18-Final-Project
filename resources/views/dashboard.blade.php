@@ -13,7 +13,7 @@
       Add new task
     </button>
 
-    <div class="grid grid-cols-4 gap-4">
+    <div class="grid lg:grid-cols-4 grid-cols-1 gap-4 ">
 
       <div class="bg-blue-900 text-white p-4 rounded-lg">
           <h1 class="text-3xl mb-2 folt-extrabold">To-do Heading</h1>
@@ -72,18 +72,14 @@
 
                       <div class="col-span-2 sm:col-span-1">
                           <label for="time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task Time</label>
-                          <select id="time" name="time" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                              <option selected="">Select time</option>
-                              <option value="7:30">7:30 - 8:30AM</option>
-                              <option value="8:30">8:30 - 9:30AM</option>
-                              <option value="9:30">9:30 - 10:30AM</option>
-                              <option value="10:30">10:30 - 11:30AM</option>
-                              <option value="13:30">1:30 - 2:30PM</option>
-                              <option value="14:30">2:30 - 3:30PM</option>
-                              <option value="15:30">3:30 - 4:30PM</option>
-                              <option value="16:30">4:30 - 5:30PM</option>
-                          </select>
+                          <input type="time" name="time" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                       </div>
+
+                      <div class="col-span-2">
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                        <input 
+                        type="text" name="description" id="description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
+                    </div>
                       
                   </div>
 
