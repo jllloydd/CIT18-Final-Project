@@ -31,8 +31,8 @@
 
       <div class="bg-blue-900 text-white p-4 rounded-lg">
 
-        <h1 class="text-3xl mb-2 folt-extrabold">{{$task->task}}</h1>
-        <p class="py-4 mb-2 font-bold">{{$task->task_date}}, {{$task->task_time}}</p>
+        <h1 class="text-3xl mb-1 folt-extrabold">{{$task->task}}</h1>
+        <p class="mb-1 font-bold">{{$task->task_date}}, {{$task->task_time}}</p>
         <p class="py-4 mb-2 font-bold">{{$task->desc}}</p>
 
         <button type="button" class="bg-green-700 text-white font-bold py-2 px-4 rounded-[10px] hover:bg-green-300 my-5">
