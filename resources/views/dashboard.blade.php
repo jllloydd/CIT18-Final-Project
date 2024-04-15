@@ -29,18 +29,18 @@
 
       @foreach($tasks as $task)
 
-      <div class="bg-blue-900 text-white p-4 rounded-lg">
+      <div class="bg-blue-800 text-white p-4 rounded-lg">
 
         <h1 class="text-3xl mb-1 folt-extrabold">{{$task->task}}</h1>
         <p class="mb-1 font-bold">{{$task->task_date}}, {{$task->task_time}}</p>
         <p class="py-4 mb-2 font-bold">{{$task->desc}}</p>
 
-        <button type="button" data-modal-target="edit-modal" data-modal-toggle="edit-modal" class="bg-green-700 text-white font-bold py-2 px-4 rounded-[10px] hover:bg-green-300 my-5">
-          Edit
+        <button type="button" data-modal-target="edit-modal" data-modal-toggle="edit-modal" class="bg-none border-2 border-white text-white font-bold py-2 px-4 rounded-[10px] hover:bg-blue-500 my-5">
+        <img src="{{asset('build/assets/images/edit.png')}}" width="25" height="25" alt="edit icon">
         </button>
 
-        <button type="button" class="bg-red-700 text-white font-bold py-2 px-4 rounded-[10px] hover:bg-red-300 my-5">
-          Delete
+        <button type="button" class="bg-none text-white font-bold py-2 px-4 border-2 border-red-900 rounded-[10px] hover:bg-red-300 my-5">
+        <img src="{{asset('build/assets/images/delete.png')}}" width="25" height="25" alt="delete icon">
         </button>
 
       </div>
