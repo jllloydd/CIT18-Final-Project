@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
-    public function store(Request $Request)
+    public function store(Request $request)
     {
-        $input = $Request->all();
-        $Request->validate([
+        $input = $request->all();
+        $request->validate([
             'task' =>'required|string|max:255',
             'date' =>'required|date',
             'time' =>'required|string|max:255',
@@ -28,17 +28,31 @@ class TaskController extends Controller
         return redirect()->route('dashboard')->with('status', 'New task created successfully');
     }
 
-    public function get(){
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'task' =>'required|string|max:255',
+            'date' =>'required|date',
+            'time' =>'required|string|max:255',
+            'description' =>'required|string|max:999',
 
-        $tasks = DB::table('tasks')
-        ->get();
-
-        return view('dashboard', compact('tasks'));
+        ]);
+        $tasks = tasks::find($id);
+        $tasks->update($request->all());
+        return redirect()->route('dashboard')->with('status', 'Task updated successfully');
     }
 
-    public function update(){
+    public function delete(Request $request, $id)
+    {
+        $request->validate([
+            'task' =>'required|string|max:255',
+            'date' =>'required|date',
+            'time' =>'required|string|max:255',
+            'description' =>'required|string|max:999',
 
+        ]);
+        $tasks = tasks::find($id);
+        $tasks->delete();
+        return redirect()->route('dashboard')->with('status', 'Task deleted');
     }
-
-
 }
