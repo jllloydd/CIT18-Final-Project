@@ -29,31 +29,12 @@ class TaskController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
-        $request->validate([
-            'task' =>'required|string|max:255',
-            'date' =>'required|date',
-            'time' =>'required|string|max:255',
-            'description' =>'required|string|max:999',
-        ]);
-        $tasks = tasks::find($id);
-        $tasks->update($request->all());
-        return redirect()->route('dashboard')->with('status', 'Task edited successfully');
-    }
+{
+    $task = tasks::find($id); 
+    $task->update($request->all());
+    return redirect()->route('dashboard')->with('status', 'Task edited successfully');
+}
 
-    public function delete(Request $request, $id)
-    {
-        $request->validate([
-            'task' =>'required|string|max:255',
-            'date' =>'required|date',
-            'time' =>'required|string|max:255',
-            'description' =>'required|string|max:999',
-
-        ]);
-        $tasks = tasks::find($id);
-        $tasks->delete();
-        return redirect()->route('dashboard')->with('status', 'Task deleted');
-    }
 
     public function get(){
 
@@ -63,4 +44,18 @@ class TaskController extends Controller
         return view('dashboard', compact('tasks'));
     }
 
+
+    public function delete($id)
+{
+    $task = tasks::find($id);
+    
+    if($task) {
+        $task->delete();
+        return redirect()->route('dashboard')
+            ->with('status', 'Task deleted successfully!');
+    }
+    return redirect()->route('dashboard')
+            ->with('status', 'Task not found!');
 }
+}
+
