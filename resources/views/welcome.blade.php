@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>UCGC</title>
+        <title>Task Manager</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -76,7 +76,7 @@
                             </div>
 
                             <img
-                            src="build\assets\images\todolist.gif"
+                            src="{{asset('todolist.gif')}}"
                             alt="to-do list animation"
                             class="h-1/2 w-1/2 rounded-[10px] drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] self-center"
                              />

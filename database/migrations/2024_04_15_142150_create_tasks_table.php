@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('task');
-            $table->date('task_date');
-            $table->time('task_time');
+            $table->date('date');
+            $table->time('time');
             $table->string('desc');
         });
     }

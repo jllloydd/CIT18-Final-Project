@@ -32,15 +32,15 @@
       <div class="bg-blue-800 text-white p-4 rounded-lg">
 
         <h1 class="text-3xl mb-1 folt-extrabold">{{$task->task}}</h1>
-        <p class="mb-1 font-bold">{{$task->task_date}}, {{$task->task_time}}</p>
+        <p class="mb-1 font-bold">{{$task->date}}, {{$task->time}}</p>
         <p class="py-4 mb-2 font-bold">{{$task->desc}}</p>
 
         <button type="button" data-modal-target="edit-modal" data-modal-toggle="edit-modal" class="bg-none border-2 border-white text-white font-bold py-2 px-4 rounded-[10px] hover:bg-blue-500 my-5">
-        <img src="{{asset('build/assets/images/edit.png')}}" width="25" height="25" alt="edit icon">
+        <img src="{{asset('edit.png')}}" width="25" height="25" alt="edit icon">
         </button>
         
         <button type="button" data-modal-target="delete-modal" data-modal-toggle="delete-modal" class="bg-none text-white font-bold py-2 px-4 border-2 border-red-900 rounded-[10px] hover:bg-red-300 my-5">
-        <img src="{{asset('build/assets/images/delete.png')}}" width="25" height="25" alt="delete icon">
+        <img src="{{asset('delete.png')}}" width="25" height="25" alt="delete icon">
         </button>
 
       </div>
@@ -112,7 +112,7 @@
       </div>
   </div> 
 
-  @if($tasks->isNotEmpty())
+@if($tasks->isNotEmpty())
 <!-- Edit Modal -->
   <div id="edit-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
@@ -155,9 +155,9 @@
                     </div>
 
                     <div class="col-span-2">
-                      <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                      <label for="desc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
                       <input 
-                      type="text" name="description" id="description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
+                      type="text" name="desc" id="desc" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
                   </div>
                     
                 </div>

@@ -15,13 +15,13 @@ class TaskController extends Controller
             'task' =>'required|string|max:255',
             'date' =>'required|date',
             'time' =>'required|string|max:255',
-            'description' =>'required|string|max:999',
+            'desc' =>'required|string|max:999',
 
         ]);
         tasks::create([
             'task' => $input['task'],
-            'task_date' => $input['date'],
-            'task_time' => $input['time'],
+            'date' => $input['date'],
+            'time' => $input['time'],
             'desc' => $input['description'],
 
         ]);
