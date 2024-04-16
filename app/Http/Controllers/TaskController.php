@@ -22,17 +22,17 @@ class TaskController extends Controller
             'task' => $input['task'],
             'date' => $input['date'],
             'time' => $input['time'],
-            'desc' => $input['description'],
+            'desc' => $input['desc'],
 
         ]);
-        return redirect()->route('dashboard')->with('status', 'New task created successfully');
+        return redirect()->route('dashboard')->with('status', 'New task created successfully!');
     }
 
     public function update(Request $request, $id)
 {
     $task = tasks::find($id); 
     $task->update($request->all());
-    return redirect()->route('dashboard')->with('status', 'Task edited successfully');
+    return redirect()->route('dashboard')->with('status', 'Task edited successfully!');
 }
 
 
